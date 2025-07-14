@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Modern 2BHK Apartment",
+      "segment_name": "Residential",
+      "description": "Located in the heart of the city with modern amenities and 24/7 security.",
+      "price": "$1200/month",
+      "status": "rent",
+      "area": "950 sq ft",
+      "location": "Dhaka, Bangladesh",
+      "facilities": ["Living Room", "Kitchen", "Balcony", "Gym Access"],
+      "image": "https://i.ibb.co.com/qY9M6nYf/kitchen3.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Family Townhouse",
+      "segment_name": "Residential",
+      "description": "Spacious 3-bedroom townhouse perfect for families, with backyard garden.",
+      "price": "$145,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Sylhet, Bangladesh",
+      "facilities": ["Living Room", "Kitchen", "Garage", "Private Garden"],
+      "image": "https://i.ibb.co.com/bqTHs75/hall.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Student Studio Flat",
+      "segment_name": "Residential",
+      "description": "Affordable and fully furnished flat ideal for university students.",
+      "price": "$500/month",
+      "status": "rent",
+      "area": "400 sq ft",
+      "location": "Chattogram, Bangladesh",
+      "facilities": ["Kitchen", "Study Desk", "Wi-Fi", "Laundry Access"],
+      "image": "https://i.ibb.co.com/Z62yz8hQ/bedroom.jpg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Luxury Duplex Apartment",
+      "segment_name": "Residential",
+      "description": "High-end duplex with smart home features, scenic view, and premium fittings.",
+      "price": "$300,000",
+      "status": "sale",
+      "area": "2200 sq ft",
+      "location": "Barishal, Bangladesh",
+      "facilities": ["Living Room", "Smart Kitchen", "Swimming Pool", "Terrace"],
+      "image": "https://i.ibb.co.com/FbgQXPQP/dining.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Senior Living Condo",
+      "segment_name": "Residential",
+      "description": "Peaceful community designed for seniors with on-site medical support.",
+      "price": "$800/month",
+      "status": "rent",
+      "area": "800 sq ft",
+      "location": "Khulna, Bangladesh",
+      "facilities": ["Living Room", "Lift Access", "Community Center", "Medical Support"],
+      "image": "https://i.ibb.co.com/RpGyBbtL/hall2.jpg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Coastal Vacation Rental",
+      "segment_name": "Residential",
+      "description": "Beachfront property for seasonal rental, ideal for small groups and families.",
+      "price": "$200/day",
+      "status": "rent",
+      "area": "1100 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "facilities": ["Living Room", "Kitchen", "Sea View", "Private Parking"],
+      "image": "https://i.ibb.co.com/SX3jPdsv/pool.jpg"
+    }
+  ]
+  

@@ -92,6 +92,7 @@ const AuthProvider = ({ children }) => {
         googleLogin,
         logout,
         user,
+        setUser,
         twitterLogin,
         updateUserProfile,
         loading

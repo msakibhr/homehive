@@ -1,12 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { getAuth, updateProfile } from 'firebase/auth';
-// import { Helmet } from 'react-helmet-async';
 import AuthContext from '../../providers/AuthContext';
 import useTitle from '../../hooks/useTitle';
-
-// Assuming you have an AuthContext to get user info.
-// The path might be different in your project.
-// import { AuthContext } from '../../providers/AuthProvider';
 
 const UpdateProfile = () => {
     const auth = getAuth();
@@ -20,7 +15,7 @@ const UpdateProfile = () => {
     useTitle("Update Profile - HomeHive");
 
     // When the user object from context is available or changes,
-    // populate the form fields with the latest data.
+    // this populates the form fields with the latest data.
     useEffect(() => {
         if (user) {
             setName(user.displayName || '');
@@ -36,14 +31,14 @@ const UpdateProfile = () => {
             return;
         }
 
-        // Use Firebase's updateProfile method
+        // Using Firebase's updateProfile method
         updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photoURL
         }).then(() => {
-            // After a successful update, the 'user' object in your AuthContext
-            // should update automatically if your provider is listening to `onAuthStateChanged`.
-            // If not, you can manually update the context's state.
+            // After a successful update, the 'user' object in the AuthContext
+            // should be updated automatically if the provider is listening to `onAuthStateChanged`.
+            // If not, the context's state can be manually updated.
             if (setUser) {
                 setUser({ ...auth.currentUser });
                 console.log("Profile updated!:", auth.currentUser);
@@ -59,16 +54,8 @@ const UpdateProfile = () => {
         return <div className="text-center my-10">Loading profile...</div>;
     }
 
-    // This should ideally be handled by your PrivateRoute component
-    if (!user) {
-        return <div className="text-center my-10">Please log in to view your profile.</div>;
-    }
-
     return (
         <div>
-            {/* <Helmet>
-                <title>Update Profile | My App</title>
-            </Helmet> */}
             <div className="flex items-center justify-center min-h-[calc(100vh-80px)] p-4 bg-gray-50">
                 <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-lg">
                     <h1 className="text-3xl font-bold text-center text-gray-800">Update Your Profile</h1>

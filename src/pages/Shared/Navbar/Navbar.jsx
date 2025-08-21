@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
     const { logout, user, loading } = useAuth();
     console.log(user);
+
+    // Helper for active class
+    const navLinkClass = ({ isActive }) =>
+        isActive ? "font-bold text-primary" : "";
 
     return (
         <div className="navbar bg-base-100 shadow-sm fixed top-0 z-50">
@@ -17,18 +21,31 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {/* <li><Link to="/">Home</Link></li>
                         <li><Link to="/update-profile">Update Profile</Link></li> */}
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/update-profile">Update Profile</a></li>
+                        {/* <li><a href="/">Home</a></li>
+                        <li><a href="/update-profile">Update Profile</a></li> */}
+                        <li>
+                            <NavLink to="/" className={navLinkClass} end>Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/update-profile" className={navLinkClass}>Update Profile</NavLink>
+                        </li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl" href="/">HomeHive</a>
+                {/* <a className="btn btn-ghost text-xl" href="/">HomeHive</a> */}
+                <NavLink className="btn btn-ghost text-xl" to="/" end>HomeHive</NavLink>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {/* <li><Link to="/">Home</Link></li>
                     <li><Link to="/update-profile">Update Profile</Link></li> */}
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/update-profile">Update Profile</a></li>
+                    {/* <li><a href="/">Home</a></li>
+                    <li><a href="/update-profile">Update Profile</a></li> */}
+                    <li>
+                        <NavLink to="/" className={navLinkClass} end>Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/update-profile" className={navLinkClass}>Update Profile</NavLink>
+                    </li>
                 </ul>
             </div>
             <div className="navbar-end">
@@ -49,7 +66,8 @@ const Navbar = () => {
                             <button onClick={logout} className="btn">Logout</button>
                         </div>
                         :
-                        <Link className="btn" to="/login">Login</Link>
+                        // <Link className="btn" to="/login">Login</Link>
+                        <NavLink className="btn" to="/login">Login</NavLink>
                 }
             </div>
         </div>

@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const SocialLogin = () => {
-    const { googleLogin, twitterLogin } = useAuth();
+    const { googleLogin, twitterLogin, facebookLogin } = useAuth();
 
     // navigation system
     const navigate = useNavigate();
@@ -49,6 +49,16 @@ const SocialLogin = () => {
                     <svg aria-label="X logo" width="16" height="12" viewBox="0 0 300 271" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" /></svg>
                     {/* Login with X */}
                     X
+                </button>
+
+                {/* Facebook */}
+                <button onClick={() => handleSocialLogin(facebookLogin)} className="btn bg-[#1877f3]# bg-white text-black border-[#e5e5e5]">
+                    <svg aria-label="Facebook logo" width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25" cy="25" r="25" fill="#1877F3"/>
+                        <path d="M32.5 26.25H27.5V40H22.5V26.25H20V21.25H22.5V18.75C22.5 16.2647 24.5147 14.25 27 14.25H32.5V19.25H29C28.7239 19.25 28.5 19.4739 28.5 19.75V21.25H32.5V26.25Z" fill="white"/>
+                    </svg>
+                    {/* Login with Facebook */}
+                    Facebook
                 </button>
             </div>
         </div>

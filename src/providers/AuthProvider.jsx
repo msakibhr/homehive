@@ -1,7 +1,7 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, TwitterAuthProvider, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, TwitterAuthProvider, updateProfile } from "firebase/auth";
 // import { createContext, useEffect, useState } from "react";
 import { useEffect, useState } from "react";
-import auth from "../firebase/firebase.config";
+import auth from "../Firebase/firebase.config";
 import AuthContext from "./AuthContext";
 
 // export const AuthContext = createContext(null);
@@ -9,6 +9,7 @@ import AuthContext from "./AuthContext";
 // social auth providers
 const googleProvider = new GoogleAuthProvider();
 const twitterProvider = new TwitterAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 
 
 const AuthProvider = ({ children }) => {
@@ -46,6 +47,12 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithPopup(auth, twitterProvider);
     };
+
+    // facebook login
+    const facebookLogin = () => {
+        setLoading(true);
+        return signInWithPopup(auth, facebookProvider);
+    }
 
     // logout
     const logout = () => {
@@ -94,6 +101,7 @@ const AuthProvider = ({ children }) => {
         user,
         setUser,
         twitterLogin,
+        facebookLogin,
         updateUserProfile,
         loading
     };

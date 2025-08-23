@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import SocialLogin from "./SocialLogin";
 import useTitle from "../../hooks/useTitle";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
     useTitle('Login - HomeHive');
@@ -22,13 +23,21 @@ const Login = () => {
         signInUser(email, password)
             .then((result) => {
                 if (result.user) {
-                    navigate(to);
+                    toast.success("Login successful!"); // Showing success toast
+                    setTimeout(() => {
+                        navigate(to);
+                    }, 500); // Delaying navigation so toast is visible
                 }
+            })
+            .catch((error) => {
+                console.error(error);
+                toast.error("Email or password is incorrect!"); // <-- Showing error toast
             });
     };
 
     return (
         <div>
+            <Toaster /> {/* Added this line to render toasts */}
             <div className="pt-10 bg-base-200 min-h-[calc(100vh-64px)]">
                 <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl">
                     <div className="card-body">

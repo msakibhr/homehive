@@ -16,6 +16,10 @@ const SocialLogin = () => {
             if (result.user) {
                 navigate(to);
             }
+        })
+        .catch((error) => {
+            console.error("Social login error:", error);
+            // The loading state will be reset by the finally block in AuthProvider
         });
     };
 

@@ -19,7 +19,8 @@ const AuthProvider = ({ children }) => {
     // function to create user w/ email & password
     const createUser = (email, password) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password);
+        return createUserWithEmailAndPassword(auth, email, password)
+            .finally(() => setLoading(false));
     };
 
     // update user profile
@@ -33,25 +34,29 @@ const AuthProvider = ({ children }) => {
     // user sign-in
     const signInUser = (email, password) => {
         setLoading(true);
-        return signInWithEmailAndPassword(auth, email, password);
+        return signInWithEmailAndPassword(auth, email, password)
+            .finally(() => setLoading(false)); // ensure spinner stops on both success/failure
     };
 
     // google login
     const googleLogin = () => {
         setLoading(true);
-        return signInWithPopup(auth, googleProvider);
+        return signInWithPopup(auth, googleProvider)
+            .finally(() => setLoading(false)); // ensure spinner stops on both success/failure
     };
 
     // twitter login
     const twitterLogin = () => {
         setLoading(true);
-        return signInWithPopup(auth, twitterProvider);
+        return signInWithPopup(auth, twitterProvider)
+            .finally(() => setLoading(false));
     };
 
     // facebook login
     const facebookLogin = () => {
         setLoading(true);
-        return signInWithPopup(auth, facebookProvider);
+        return signInWithPopup(auth, facebookProvider)
+            .finally(() => setLoading(false));
     }
 
     // logout

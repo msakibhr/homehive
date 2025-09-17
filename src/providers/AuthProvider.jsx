@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, TwitterAuthProvider, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, TwitterAuthProvider, updateProfile } from "firebase/auth";
 // import { createContext, useEffect, useState } from "react";
 import { useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
@@ -8,6 +8,7 @@ import AuthContext from "./AuthContext";
 
 // social auth providers
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 const twitterProvider = new TwitterAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 
@@ -42,6 +43,13 @@ const AuthProvider = ({ children }) => {
     const googleLogin = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider)
+            .finally(() => setLoading(false)); // ensure spinner stops on both success/failure
+    };
+    
+    // github login
+    const githubLogin = () => {
+        setLoading(true);
+        return signInWithPopup(auth, githubProvider)
             .finally(() => setLoading(false)); // ensure spinner stops on both success/failure
     };
 
@@ -102,6 +110,7 @@ const AuthProvider = ({ children }) => {
         createUser,
         signInUser,
         googleLogin,
+        githubLogin,
         logout,
         user,
         setUser,

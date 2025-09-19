@@ -4,12 +4,15 @@ import useAuth from "../../hooks/useAuth";
 import SocialLogin from "./SocialLogin";
 import useTitle from "../../hooks/useTitle";
 import toast, { Toaster } from "react-hot-toast";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
     useTitle('Register - HomeHive');
 
     const { createUser, updateUserProfile } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [showPassword, setShowPassword] = useState(false);
 
     // navigation system
     const navigate = useNavigate();
@@ -32,6 +35,10 @@ const Register = () => {
             });
     };
 
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <div>
             <Toaster /> {/* Added this line to render toasts */}
@@ -48,19 +55,36 @@ const Register = () => {
                                 <label className="label">Photo URL</label>
                                 <input type="text" className="input" placeholder="Photo URL" {...register("photo")} />
                                 <label className="label">Password</label>
-                                <input type="password" className="input" placeholder="Password" {...register("password", {
-                                    required: "Password is required",
-                                    minLength: {
-                                        value: 6,
-                                        message: "Password must be of at least 6 characters",
-                                    },
-                                    validate: {
-                                        hasUpperCase: (value) =>
-                                            /[A-Z]/.test(value) || "Must include at least one uppercase letter",
-                                        hasLowerCase: (value) =>
-                                            /[a-z]/.test(value) || "Must include at least one lowercase letter",
-                                    },
-                                })} />
+                                <div className="relative">
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        className="input"
+                                        placeholder="Password"
+                                        {...register("password", {
+                                        required: "Password is required",
+                                        minLength: {
+                                            value: 6,
+                                            message: "Password must be of at least 6 characters",
+                                        },
+                                        validate: {
+                                            hasUpperCase: (value) =>
+                                                /[A-Z]/.test(value) || "Must include at least one uppercase letter",
+                                            hasLowerCase: (value) =>
+                                                /[a-z]/.test(value) || "Must include at least one lowercase letter",
+                                        },
+                                    })} />
+                                    <button
+                                        type="button"
+                                        onClick={togglePasswordVisibility}
+                                        className="absolute inset-y-0 right-0 pr-6 flex items-center text-gray-400 hover:text-gray-600"
+                                    >
+                                        {showPassword ? (
+                                            <FaEye />
+                                        ) : (
+                                            <FaEyeSlash />
+                                        )}
+                                    </button>
+                                </div>
                                 {errors.password && <p className="text-red-500 text-xs">{errors.password.message}</p>}
                                 <button className="btn btn-neutral mt-4">Register</button>
                             </fieldset>

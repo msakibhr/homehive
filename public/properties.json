@@ -9,7 +9,9 @@
       "area": "950 sq ft",
       "location": "Dhaka, Bangladesh",
       "facilities": ["Living Room", "Kitchen", "Balcony", "Gym Access"],
-      "image": "https://i.ibb.co.com/qY9M6nYf/kitchen3.jpg"
+      "image": "https://i.ibb.co.com/qY9M6nYf/kitchen3.jpg",
+      "latitude": 23.8041,
+      "longitude": 90.4152
     },
     {
       "id": 2,
@@ -21,7 +23,9 @@
       "area": "1800 sq ft",
       "location": "Sylhet, Bangladesh",
       "facilities": ["Living Room", "Kitchen", "Garage", "Private Garden"],
-      "image": "https://i.ibb.co.com/bqTHs75/hall.jpg"
+      "image": "https://i.ibb.co.com/bqTHs75/hall.jpg",
+      "latitude": 24.9048,
+      "longitude": 91.8600
     },
     {
       "id": 3,
@@ -33,7 +37,9 @@
       "area": "400 sq ft",
       "location": "Chattogram, Bangladesh",
       "facilities": ["Kitchen", "Study Desk", "Wi-Fi", "Laundry Access"],
-      "image": "https://i.ibb.co.com/Z62yz8hQ/bedroom.jpg"
+      "image": "https://i.ibb.co.com/Z62yz8hQ/bedroom.jpg",
+      "latitude": 22.3752,
+      "longitude": 91.8349
     },
     {
       "id": 4,
@@ -45,7 +51,9 @@
       "area": "2200 sq ft",
       "location": "Barishal, Bangladesh",
       "facilities": ["Living Room", "Smart Kitchen", "Swimming Pool", "Terrace"],
-      "image": "https://i.ibb.co.com/FbgQXPQP/dining.jpg"
+      "image": "https://i.ibb.co.com/FbgQXPQP/dining.jpg",
+      "latitude": 22.7133,
+      "longitude": 90.3496
     },
     {
       "id": 5,
@@ -57,7 +65,9 @@
       "area": "800 sq ft",
       "location": "Khulna, Bangladesh",
       "facilities": ["Living Room", "Lift Access", "Community Center", "Medical Support"],
-      "image": "https://i.ibb.co.com/RpGyBbtL/hall2.jpg"
+      "image": "https://i.ibb.co.com/RpGyBbtL/hall2.jpg",
+      "latitude": 22.8373,
+      "longitude": 89.5400
     },
     {
       "id": 6,
@@ -69,7 +79,9 @@
       "area": "1100 sq ft",
       "location": "Cox's Bazar, Bangladesh",
       "facilities": ["Living Room", "Kitchen", "Sea View", "Private Parking"],
-      "image": "https://i.ibb.co.com/SX3jPdsv/pool.jpg"
+      "image": "https://i.ibb.co.com/SX3jPdsv/pool.jpg",
+      "latitude": 21.4272,
+      "longitude": 92.0061
     }
   ]
   

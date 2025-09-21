@@ -7,6 +7,7 @@ import PropertyDetails from "../pages/PropertyDetails/PropertyDetails";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import PropertyMap from "../pages/PropertyMap/PropertyMap";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             {
                 path: '/update-profile',
                 element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>,
+            },
+            {
+                path: '/property-map',
+                element: <PrivateRoute><PropertyMap></PropertyMap></PrivateRoute>,
             }
         ]
     },

@@ -25,6 +25,9 @@ const Navbar = () => {
                         <li>
                             <NavLink to="/update-profile" className={navLinkClass}>Update Profile</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/property-map" className={navLinkClass}>Property Map</NavLink>
+                        </li>
                     </ul>
                 </div>
                 {/* <a className="btn btn-ghost text-xl" href="/">HomeHive</a> */}
@@ -37,6 +40,9 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink to="/update-profile" className={navLinkClass}>Update Profile</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/property-map" className={navLinkClass}>Property Map</NavLink>
                     </li>
                 </ul>
             </div>

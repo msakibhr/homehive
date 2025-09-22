@@ -63,8 +63,9 @@ const PropertyMap = () => {
             {/* Map Container */}
             <div className="h-[calc(100vh-200px)]">
                 <MapContainer
-                    center={[23.8103, 90.4125]} // Dhaka, Bangladesh coordinates
-                    zoom={12}
+                    center={[23.8041, 90.4152]} // Dhaka, Bangladesh coordinates
+                    zoom={6}
+                    // scrollWheelZoom={false}
                     style={{ height: '100%', width: '100%' }}
                     className="z-0"
                 >
@@ -88,11 +89,11 @@ const PropertyMap = () => {
                                     />
                                     <h3 className="font-semibold text-lg">{property.title}</h3>
                                     <p className="text-gray-600 text-sm mb-2">{property.location}</p>
-                                    <p className="text-green-600 font-bold">${property.price}</p>
+                                    <p className="text-green-600 font-bold">{property.price}</p>
                                     <div className="flex items-center mt-2 text-sm text-gray-500">
                                         <span className="mr-4">🛏️ {property.bedrooms}</span>
                                         <span className="mr-4">🚿 {property.bathrooms}</span>
-                                        <span>📐 {property.area} sqft</span>
+                                        <span>📐 {property.area}</span>
                                     </div>
                                 </div>
                             </Popup>

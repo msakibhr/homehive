@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import useTitle from '../../hooks/useTitle';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
+import locationPinIcon from '../../../src/assets/locationPin.png'
 
 const PropertyMap = () => {
     useTitle('Property Map - HomeHive');
@@ -15,7 +16,8 @@ const PropertyMap = () => {
 
     // Custom marker icon
     const customIcon = new Icon({
-        iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+        // iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+        iconUrl: locationPinIcon,
         iconSize: [32, 32],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32]
@@ -124,7 +126,8 @@ const PropertyMap = () => {
                         <div className="flex items-center space-x-4">
                             <div className="flex items-center">
                                 <img 
-                                    src="https://cdn-icons-png.flaticon.com/512/684/684908.png" 
+                                    // src="https://cdn-icons-png.flaticon.com/512/684/684908.png" 
+                                    src='/src/assets/locationPin.png' 
                                     alt="Property marker" 
                                     className="w-4 h-4 mr-1"
                                 />
@@ -133,6 +136,11 @@ const PropertyMap = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="bg-gray-100 py-2 px-4 text-center text-xs text-gray-600">
+                <a href="https://www.flaticon.com/free-icons/pin" title="pin icons" className="hover:text-gray-800">
+                    Pin icons created by Freepik - Flaticon
+                </a>
             </div>
         </div>
     );

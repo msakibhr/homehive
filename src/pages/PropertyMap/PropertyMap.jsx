@@ -4,10 +4,12 @@ import 'leaflet/dist/leaflet.css';
 import useAuth from '../../hooks/useAuth';
 import useTitle from '../../hooks/useTitle';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { useNavigate } from 'react-router-dom';
 
 const PropertyMap = () => {
     useTitle('Property Map - HomeHive');
     const { user } = useAuth();
+    const navigate = useNavigate();
     const [properties, setProperties] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -32,6 +34,10 @@ const PropertyMap = () => {
                 setLoading(false);
             });
     }, []);
+
+    const handlePropertyClick = (propertyId) => {
+        navigate(`/properties/${propertyId}`);
+    };
 
     if (loading) {
         return (
@@ -95,6 +101,12 @@ const PropertyMap = () => {
                                         <span className="mr-4">🚿 {property.bathrooms}</span>
                                         <span>📐 {property.area}</span>
                                     </div>
+                                    <button
+                                        onClick={() => handlePropertyClick(property.id)}
+                                        className="w-full mt-3 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
+                                    >
+                                        View Details
+                                    </button>
                                 </div>
                             </Popup>
                         </Marker>
